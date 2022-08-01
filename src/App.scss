@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$text: #efe9f2;
+$pink: #ef70a4;
+$purple: #81546B;
+
+$transition: all 0.3s ease;
+$box-shadow: 0px 10px 20px 0px rgba(60, 52, 63, 0.5);
+
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.button {
+  background-color: transparent;
+  // margin-top: 10px;
+  border: 2px solid $pink;
+  border-radius: 5px;
+  font-weight: 500;
+  color: $pink;
+  transition: background-color .3s ease, color .3s ease;
+  &:hover {
+    background-color: $pink;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
+body {
+  background-image: linear-gradient(
+    to right bottom,
+    #81546b,
+    #6e4c62,
+    #5c4457,
+    #4b3c4c,
+    #3c343f
+  );
+  background-attachment: fixed;
+}
+
+.debug {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+
+.search {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  margin-top: 50px;
+  @include flex(center, center);
+  flex-direction: column;
+  #logo {
+    // position: absolute;
+    // top: -100%;
+    z-index: 1;
+    // opacity: .95;
+  }
+  #loader {
+    position: absolute;
+    top: -15px;
+    transition: all .5s linear;
+    height: 175px;
+  }
+  .search--wrapper {
+    // border: 1px solid red;
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px;
+    @include flex(center, center);
+    #search--input {
+      background-color: #bcbabc5c;
+      width: 100%;
+      padding: 20px 120px 20px 30px;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      color: $text;
+      outline: none;
+      box-shadow: $box-shadow;
+      &::placeholder {
+        color: #bbb7bc;
+      }
+    }
+    #search--button {
+      position: absolute;
+      right: -80px;
+      padding: 7px 14px;
+      width: 80px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      background-color: transparent;
+      border: 2px solid $pink;
+      border-radius: 25px;
+      transform: translateX(calc(-100% - 20px));
+      transition: $transition;
+      &:hover {
+        background-color: $pink;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+  .youtubeData--wrapper {
+    // position: relative;
+    // border: 1px solid red;
+    width: 100%;
+    max-width: 700px;
+    margin-top: 50px;
+    min-height: 140px;
+    overflow: hidden;
+    .youtubeData {
+      // position: absolute;
+      // border: 1px solid green;
+      // background-color: #bcbabc5c;
+      @include flex(center, center);
+      gap: 20px;
+      padding: 20px;
+      border-radius: 15px;
+      transition: $transition;
+      img {
+        border-radius: 5px;
+        box-shadow: $box-shadow;
+      }
+      h3 {
+        text-shadow: 2px 3px 6px rgba(106,100,112,0.5);
+      }
+      button {
+        margin-top: 10px;
+        box-shadow: $box-shadow;
+      }
+    }
+  }
+}
+
+.serverFiles {
+  // border: 1px solid red;
+  padding: 10px;
+  @include flex(center, center);
+  flex-direction: column;
+  margin-bottom: 30px;
+  .file {
+    @include flex(space-between, center);
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 700px;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: $box-shadow;
+    .file--title {
+      // white-space: nowrap;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+      font-weight: 500;
+    }
+    .file--buttons {
+      @include flex(center, center);
+      gap: 10px;
+    }
+  }
+  #load--more {
+    margin-top: 10px;
+  }
+}
+
+#audioPlayer {
+  display: none;
+  &::-webkit-media-controls-panel {
+    // background-color: green;
+  }
+  &::-webkit-media-controls-play-button {
+    // background-color: red;
+  }
+}
