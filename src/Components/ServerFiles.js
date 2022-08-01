@@ -19,7 +19,7 @@ export default function ServerFiles() {
                     className="button"
                     onClick={() => getFileBlob(file.slice(0, -4), "download")}
                   >
-                    Download
+                    <i className="fa-solid fa-download"></i>
                   </button>
                   <button
                     className="button"
@@ -28,7 +28,7 @@ export default function ServerFiles() {
                       setCurrentPlay(file.slice(0, -4));
                     }}
                   >
-                    {file === currentPlay + ".mp3" ? "Stop" : "Play"}
+                    {file === currentPlay + ".mp3" ? <i className="fa-solid fa-stop"></i> : <i className="fa-solid fa-play"></i>}
                   </button>
                 </div>
               </div>
