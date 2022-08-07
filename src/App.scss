@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 $text: #efe9f2;
-$pink: #ef70a4;
+// $pink: #ef70a4;
+$red: #ea3c3c;
 $purple: #81546B;
 
 $transition: all 0.3s ease;
-$box-shadow: 0px 10px 20px 0px rgba(60, 52, 63, 0.5);
+// $box-shadow: 0px 10px 20px 0px rgba(60, 52, 63, 0.5);
+$box-shadow: 0px 5px 10px 0px rgba(0, 9, 50, 0.5);
 
 @mixin flex($justify, $align) {
   display: flex;
@@ -15,20 +17,19 @@ $box-shadow: 0px 10px 20px 0px rgba(60, 52, 63, 0.5);
 
 .button {
   background-color: transparent;
-  // margin-top: 10px;
-  border: 2px solid $pink;
+  border: 2px solid $red;
   border-radius: 5px;
   font-weight: 500;
-  color: $pink;
+  color: $red;
   transition: background-color .3s ease, color .3s ease;
   &:hover {
-    background-color: $pink;
+    background-color: $red;
     color: white;
     cursor: pointer;
   }
   &:active {
     background-color: transparent;
-    color: $pink;
+    color: $red;
   }
 }
 
@@ -41,14 +42,8 @@ $box-shadow: 0px 10px 20px 0px rgba(60, 52, 63, 0.5);
 }
 
 body {
-  background-image: linear-gradient(
-    to right bottom,
-    #81546b,
-    #6e4c62,
-    #5c4457,
-    #4b3c4c,
-    #3c343f
-  );
+  // background-image: radial-gradient(circle, #000428, #031a40, #062a5a, #073b75, #004e92);
+  background-image: radial-gradient(circle, #141e30, #182539, #1c2c42, #20334b, #243b55);
   background-attachment: fixed;
 }
 
@@ -68,10 +63,7 @@ body {
   @include flex(center, center);
   flex-direction: column;
   #logo {
-    // position: absolute;
-    // top: -100%;
     z-index: 1;
-    // opacity: .95;
   }
   #loader {
     position: absolute;
@@ -80,7 +72,6 @@ body {
     height: 175px;
   }
   .search--wrapper {
-    // border: 1px solid red;
     width: 100%;
     margin-top: 30px;
     padding: 10px;
@@ -106,30 +97,25 @@ body {
       font-size: 0.9rem;
       font-weight: 500;
       background-color: transparent;
-      color: $pink;
-      border: 2px solid $pink;
+      color: lightgray;
+      border: 2px solid $red;
       border-radius: 25px;
       transform: translateX(calc(-100% - 20px));
       transition: $transition;
       &:hover {
-        background-color: $pink;
+        background-color: $red;
         color: white;
         cursor: pointer;
       }
     }
   }
   .youtubeData--wrapper {
-    // position: relative;
-    // border: 1px solid red;
     width: 100%;
     max-width: 700px;
     margin-top: 50px;
     min-height: 140px;
     overflow: hidden;
     .youtubeData {
-      // position: absolute;
-      // border: 1px solid green;
-      // background-color: #bcbabc5c;
       @include flex(center, center);
       gap: 20px;
       padding: 20px;
@@ -151,7 +137,6 @@ body {
 }
 
 .serverFiles {
-  // border: 1px solid red;
   padding: 10px;
   @include flex(center, center);
   flex-direction: column;
@@ -160,9 +145,7 @@ body {
     font-size: 1.3rem;
     margin-bottom: 10px;
     padding-bottom: 5px;
-    border-bottom: 3px solid $purple;
-    color: $pink;
-    box-shadow: $box-shadow;
+    color: $red;
   }
   .file {
     @include flex(space-between, center);
@@ -175,9 +158,6 @@ body {
     border-radius: 5px;
     box-shadow: $box-shadow;
     .file--title {
-      // white-space: nowrap;
-      // overflow: hidden;
-      // text-overflow: ellipsis;
       font-weight: 500;
     }
     .file--buttons {
@@ -197,10 +177,8 @@ body {
 
 #audioPlayer {
   display: none;
-  &::-webkit-media-controls-panel {
-    // background-color: green;
-  }
-  &::-webkit-media-controls-play-button {
-    // background-color: red;
-  }
+  // &::-webkit-media-controls-panel {
+  // }
+  // &::-webkit-media-controls-play-button {
+  // }
 }
