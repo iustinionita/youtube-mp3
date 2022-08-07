@@ -1,0 +1,36 @@
+@media screen and (max-width: 600px){
+    .button {
+        &:hover {
+            @media(hover: none) {
+                background-color: transparent;
+            }
+        }
+    }
+    .search {
+        #logo {
+            height: 100px;
+        }
+        #loader {
+            height: 130px;
+        }
+        .search--wrapper {
+            #search--input {
+                padding: 15px 120px 15px 15px;
+                font-size: 1rem;
+            }
+            #search--button {
+                padding: 4px 8px;
+                font-size: .8rem;
+            }
+        }
+    }
+    .serverFiles {
+        .file {
+            .file--buttons {
+                button:nth-of-type(2) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
